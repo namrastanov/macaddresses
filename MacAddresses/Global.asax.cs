@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using MacAddresses.App_Start;
 using System.Web.Http;
-using System.Web.Routing;
 
 namespace MacAddresses
 {
@@ -11,6 +7,7 @@ namespace MacAddresses
     {
         protected void Application_Start()
         {
+            AutofacWebApiConfig.Initialize(GlobalConfiguration.Configuration);
             GlobalConfiguration.Configure(WebApiConfig.Register);
         }
     }

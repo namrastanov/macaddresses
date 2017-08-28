@@ -2,7 +2,7 @@
 
 namespace MacAddresses.Data.Entities
 {
-    public class MacAddress: Disposable, IEntity
+    public class MacAddress
     {
         public string Value { get; set; }
     }

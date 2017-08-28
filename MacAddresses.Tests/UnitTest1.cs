@@ -4,6 +4,9 @@ using MacAddresses.Models.InputParamModels;
 using System.Collections.Generic;
 using MacAddresses.Controllers;
 using MacAddresses.Models.ResponseModels;
+using MacAddresses.Data.Entities;
+using MacAddresses.Data.Services.DataServices;
+using MacAddresses.Data.Services.ValidationServices;
 
 namespace MacAddresses.Tests
 {
@@ -15,18 +18,20 @@ namespace MacAddresses.Tests
         {
             var testMacs = new AddMacsParams
             {
-                Macs = new List<string>
+                Macs = new List<MacAddress>
                 {
-                    "AA:AA:AA:AA:AA:A1",
-                    "BB:BB:BB:BB:BB:B1",
-                    "BB:BB:BB:BB:BB:B1",
-                    "CC:CC:CC:CC:CC:C1",
-                    "CC:CC:CC:CC:CC:C2"
+                    new MacAddress{ Value = "AA:AA:AA:AA:AA:A1" },
+                    new MacAddress{ Value = "BB:BB:BB:BB:BB:B1" },
+                    new MacAddress{ Value = "BB:BB:BB:BB:BB:B2" },
+                    new MacAddress{ Value = "CC:CC:CC:CC:CC:C1" },
+                    new MacAddress{ Value = "CC:CC:CC:CC:CC:C2" }
                 }
             };
-            var controller = new HomeController();
+            var dataService = new MacAddressService();
+            var validationService = new MacAddressValidationService();
+            var controller = new HomeController(dataService, validationService);
             var result = controller.AddMacs(testMacs);
-            Assert.AreEqual(testMacs.Macs.Count, result.AddedCount);
+            Assert.IsTrue(result.IsSuccess);
         }
     }
 }

@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using MacAddresses.Data.Entities;
+using System.Collections.Generic;
 
 namespace MacAddresses.Models.InputParamModels
 {
     public class AddMacsParams
     {
-        public IList<string> Macs { get; set; }
+        public IList<MacAddress> Macs { get; set; }
     }
 }
