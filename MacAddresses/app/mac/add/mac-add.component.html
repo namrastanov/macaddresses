@@ -1,0 +1,12 @@
+<div class="component">
+  <h1>
+    {{title}}
+  </h1>
+  <form novalidate>
+    <input [(ngModel)]="mac.value" type="text" name="mac" placeholder="Enter mac address" validateMac #macNg="ngModel"/>
+    <small [hidden]="macNg.valid">
+      Mac is invalid
+    </small>
+    <button [hidden]="macNg.invalid" (click)="addMac()">Add</button>
+  </form>
+</div>

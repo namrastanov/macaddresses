@@ -1,0 +1,18 @@
+.component {
+  padding: 30px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 50%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.delete-person-btn {
+  width: 10px;
+}

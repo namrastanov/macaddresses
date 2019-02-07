@@ -1,0 +1,23 @@
+.main-menu {
+  width: 100%;
+  background-color: #CBF1CB;
+  font-family: Verdana;
+  font-size: 14px;
+}
+
+.main-menu__item {
+  padding: 20px 15px;
+  color: #4a4a4a;
+  float: left;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+  .main-menu__item:hover {
+    background-color: #E5FFE6;
+  }
+
+#content {
+  padding: 20px;
+}
+

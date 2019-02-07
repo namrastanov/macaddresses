@@ -1,5 +1,6 @@
 ﻿using MacAddresses.App_Start;
 using System.Web.Http;
+using System.Web.Routing;
 
 namespace MacAddresses
 {
@@ -9,6 +10,7 @@ namespace MacAddresses
         {
             AutofacWebApiConfig.Initialize(GlobalConfiguration.Configuration);
             GlobalConfiguration.Configure(WebApiConfig.Register);
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
     }
 }

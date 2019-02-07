@@ -1,0 +1,15 @@
+<div class="component">
+  <h1>
+    {{title}}
+  </h1>
+  <table>
+    <tr>
+      <th>Mac address</th>
+    </tr>
+    <tr *ngFor="let mac of macs">
+      <td>{{mac.value}}</td>
+    </tr>
+  </table>
+  <br />
+  <button (click)="sendMacsToServer()">Send to server</button>
+</div>
